@@ -482,7 +482,7 @@ class FFmpegFD(ExternalFD):
             return False
         ffpp.check_version()
 
-        args = [ffpp.executable, '-y']
+        args = [ffpp.executable, '-y', '-nostdin']
 
         for log_level in ('quiet', 'verbose'):
             if self.params.get(log_level, False):
